@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 var mongodb = require('mongodb');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://54.68.100.209/tado');
+mongoose.connect('mongodb://localhost/tado');
 
 var User = require('./documents/user.js');
 var Task = require('./documents/task.js');
