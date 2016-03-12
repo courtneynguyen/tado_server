@@ -7,19 +7,19 @@ app.use(bodyParser.json());
 var mongodb = require('mongodb');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://54.68.100.209/tado');
 
 var User = require('./documents/user.js');
 var Task = require('./documents/task.js');
-
-var md5 = require('js-md5');
 
 app.post('/tasks', function(req, res){
 	console.log(req.body.task);
 
 	var task = new Task({
 		complete: req.body.task.completed,
-		description: req.body.task.description
+		description: req.body.task.description,
+		createdDate: new Date(),
+		updatedDate: new Date()
 	});
 	task.save(function(err, task2){
 		console.log(err);

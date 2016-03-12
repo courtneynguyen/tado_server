@@ -4,7 +4,8 @@ var Schema = mongoose.Schema;
 var userSchema = new Schema({
 	email: String,
 	password: String,
-	tasks: Array
+	tasks: Array,
+	lastOnlineDate: Date
 });
 
 module.exports = mongoose.model('User', userSchema);
